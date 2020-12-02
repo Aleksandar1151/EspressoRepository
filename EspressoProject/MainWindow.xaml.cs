@@ -24,23 +24,22 @@ namespace EspressoProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static LoginUC LoginPage = new LoginUC();
+        //Stranice
+        public static MainUC MainPage = new MainUC();
 
+        //Konekcija sa bazom
         public static MySqlConnection dbConn;
         public MainWindow()
         {
+            //Pokretanje baze
             try { InitializeDB(); }
             catch (Exception ex) { MessageBox.Show("Greška prilikom pokretanja baze podataka\nGreška:" + ex.Message); this.Close(); }
 
             InitializeComponent();
 
-            // GridMain.Children.Clear();
-            //GridMain.Children.Add(LoginPage);
-
-            //Test1
-
-            List<string> names = User.GetNames();
             
+            //Provjera da baza radi
+            List<string> names = User.GetNames();            
             foreach(String name in names)
             {
                 Console.WriteLine(name);
@@ -49,18 +48,32 @@ namespace EspressoProject
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
 
-       
+       /// <summary>
+       /// Povezivanje Baze "espresso" sa projektom
+       /// </summary>
         public static void InitializeDB()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["myDatabaseConnection"].ConnectionString;
             dbConn = new MySqlConnection(connectionString);
 
+        }
+
+        /// <summary>
+        /// Dugme "Prijava"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginButtonClick(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(MainPage);
+        }
+
+        private void ShutDownButton(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

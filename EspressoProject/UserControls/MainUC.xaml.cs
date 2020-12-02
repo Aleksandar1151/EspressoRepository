@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace EspressoProject.UserControls
 {
     /// <summary>
-    /// Interaction logic for LoginUC.xaml
+    /// Interaction logic for MainUC.xaml
     /// </summary>
-    public partial class LoginUC : UserControl
+    public partial class MainUC : UserControl
     {
-        public LoginUC()
+        public MainUC()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
