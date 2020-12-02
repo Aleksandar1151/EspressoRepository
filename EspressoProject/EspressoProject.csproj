@@ -110,9 +110,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\User.cs" />
-    <Compile Include="UserControls\LoginUC.xaml.cs">
-      <DependentUpon>LoginUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
     </Compile>
@@ -128,10 +125,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\LoginUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControls\MainUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
