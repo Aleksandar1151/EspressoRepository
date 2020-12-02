@@ -1,5 +1,4 @@
-﻿using EspressoProject.UserControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EspressoProject
+namespace EspressoProject.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginUC : UserControl
     {
-        public static LoginUC LoginPage = new LoginUC();
-        public MainWindow()
+        public LoginUC()
         {
             InitializeComponent();
-
-           // GridMain.Children.Clear();
-            //GridMain.Children.Add(LoginPage);
-
-            //Test1
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

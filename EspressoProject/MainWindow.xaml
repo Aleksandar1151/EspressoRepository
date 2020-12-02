@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EspressoProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow"  Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid x:Name="GridMain">
+        <Button Content="Button" Margin="720,6,41,0" VerticalAlignment="Top" Height="33" RenderTransformOrigin="0.504,0.587"/>
+        <Button Content="Button" VerticalAlignment="Top" Margin="755,7,6,0" Height="35"/>
     </Grid>
 </Window>
