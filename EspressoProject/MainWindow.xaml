@@ -10,9 +10,9 @@
     <StackPanel>
         <Grid Background="WhiteSmoke" Height="30" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5 0">
-                <Button Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
-                <Button Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                <Button Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick"/>
+                <Button Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick"/>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="LogOutButtonClick">
                     <materialDesign:PackIcon Kind="Logout" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="ShutDownButton">
@@ -22,11 +22,14 @@
 
 
         </Grid>
-        <Grid x:Name="GridMain" Height="735">
-            <Button Content="PRIJAVA" Height="Auto" Margin="450,499,416,180" Click="LoginButtonClick" FontSize="25"/>
+        <Grid x:Name="GridMain" Height="738">
+            <Button Content="PRIJAVA" Height="Auto" Margin="450,499,416,180" Click="LoginButtonClick" FontSize="25" />
             <TextBox HorizontalAlignment="Left" Height="60" Margin="469,200,0,0" TextWrapping="Wrap" Text="Ime" VerticalAlignment="Top" Width="450" FontSize="30"/>
             <TextBox HorizontalAlignment="Left" Height="60" Margin="468,300,0,0" TextWrapping="Wrap" Text="Šifra" VerticalAlignment="Top" Width="450" FontSize="30"/>
             <Button Content="Ugao" HorizontalAlignment="Left" Margin="1290,678,0,0" VerticalAlignment="Top" Width="75" Height="56"/>
+            <ProgressBar Name="pbStatus" HorizontalAlignment="Left" Height="34" Margin="222,632,0,0" VerticalAlignment="Top" Width="994"/>
+            
+
         </Grid>
 
     </StackPanel>
