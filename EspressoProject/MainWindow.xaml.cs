@@ -114,5 +114,15 @@ namespace EspressoProject
             await Task.Delay(1000);
 
         }
+
+        private void NameGotFocus(object sender, RoutedEventArgs e)
+        {
+            NameBox.Foreground = Brushes.Yellow;
+        }
+
+        private void NameBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            NameBox.Foreground = Brushes.Red;
+        }
     }
 }

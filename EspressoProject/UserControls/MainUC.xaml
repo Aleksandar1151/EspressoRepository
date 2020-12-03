@@ -6,8 +6,15 @@
              xmlns:local="clr-namespace:EspressoProject.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="738" d:DesignWidth="1366">
-    <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="482,309,0,0" TextWrapping="Wrap" Text="GLAVNA STRANICA" VerticalAlignment="Top" Height="78" Width="351" FontSize="30"/>
 
-    </Grid>
+    <StackPanel Orientation="Horizontal" >
+        <Grid Background="White" Height="738" Width="883" HorizontalAlignment="Left">            
+
+        </Grid>
+        <Grid Background="Wheat"  Height="738" Width="483" HorizontalAlignment="Right">
+            
+        </Grid>
+
+    </StackPanel>
+   
 </UserControl>
