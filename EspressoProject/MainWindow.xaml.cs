@@ -20,6 +20,7 @@ using System.Threading;
 
 namespace EspressoProject
 {
+    // Dusan dusan
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
