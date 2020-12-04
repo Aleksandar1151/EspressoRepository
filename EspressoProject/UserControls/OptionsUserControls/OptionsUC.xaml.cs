@@ -13,18 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace EspressoProject.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainUC.xaml
+    /// Interaction logic for OptionsUC.xaml
     /// </summary>
-    public partial class MainUC : UserControl
+    public partial class OptionsUC : UserControl
     {
-        public MainUC()
+        public static UsersUC UsersPage = new UsersUC();
+        public OptionsUC()
         {
             InitializeComponent();
         }
 
-
+        private void UsersButtonClick(object sender, RoutedEventArgs e)
+        {
+          
+                OptionsGrid.Children.Clear();
+            OptionsGrid.Children.Add(UsersPage);
+            
+        }
     }
 }
