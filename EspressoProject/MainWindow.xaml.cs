@@ -43,28 +43,24 @@ namespace EspressoProject
             try { Database.InitializeDB(); }
             catch (Exception ex) { MessageBox.Show("Greška prilikom pokretanja baze podataka\nGreška:" + ex.Message); this.Close(); }
 
+            //sObservableCollection<User> Collection = new ObservableCollection<User>();
+
+
             InitializeComponent();
 
-            ObservableCollection<User> UserList = new ObservableCollection<User>();
-            User user = new User("","","");
 
-            UserList = user.Load();
-
-            foreach(User tempUser in UserList)
-            {
-                Console.WriteLine(tempUser.ToString());
-            }
+            GridMain.Children.Clear();
+            GridMain.Children.Add(OptionsPage);
 
             
-
-            /*
             //Provjera da baza radi
-            List<string> names = User.GetNames();
-            foreach (String name in names)
+            /*
+             * Collection = User.Load();
+            foreach (User name in Collection)
             {
                 Console.WriteLine(name);
-            }*/
-
+            }
+            */
             ////Bla bla
         }
 
