@@ -33,12 +33,12 @@
 
         </Grid>
         <Grid x:Name="GridMain" Height="722" Background="WhiteSmoke">
-            <Button Content="PRIJAVA" Height="Auto" Margin="156,425,710,254" Click="LoginButtonClick" FontSize="25" />
+            <Button Content="PRIJAVA" Height="Auto" Margin="156,425,758,239" Click="LoginButtonClick" FontSize="25" />
             <TextBox Name="NameBox" HorizontalAlignment="Left" Height="72" Margin="160,176,0,0" TextWrapping="Wrap" Text="Korisničko ime" VerticalAlignment="Top" Width="450" FontSize="30" GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161"/>
             <TextBox Name="PasswordBox" HorizontalAlignment="Left" Height="72" Margin="159,276,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Width="453" FontSize="30" Foreground="#616161" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus"/>
             <Button Content="Ugao" Margin="1290,673,2,1" Height="Auto"/>            
             <ProgressBar Name="pbStatus" HorizontalAlignment="Left" Height="474" Margin="761,87,0,0" VerticalAlignment="Top" Width="500" RenderTransformOrigin="0.524,0.504" Orientation="Vertical" Foreground="#FF964315" Background="WhiteSmoke" BorderBrush="White" />
-            <Image Name="CoffeeImage" HorizontalAlignment="Left" Height="587" Margin="712,59,0,0" VerticalAlignment="Top" Width="586" RenderTransformOrigin="-0.031,0.56" Source="Resources/cofefe.png"/>
+            <Image Name="CoffeeImage" HorizontalAlignment="Left" Height="587" Margin="712,29,0,0" VerticalAlignment="Top" Width="586" RenderTransformOrigin="-0.031,0.56" Source="Resources/LoginCoffee.png"/>
             
 
         </Grid>

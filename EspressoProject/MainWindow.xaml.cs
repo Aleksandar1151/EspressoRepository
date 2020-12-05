@@ -17,6 +17,7 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using EspressoProject.Classes;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace EspressoProject
 {
@@ -35,23 +36,34 @@ namespace EspressoProject
         public static OptionsUC OptionsPage = new OptionsUC();
 
         //Konekcija sa bazom
-        public static MySqlConnection dbConn;
+        //public static MySqlConnection dbConn;
         public MainWindow()
         {
             //Pokretanje baze
-            try { InitializeDB(); }
+            try { Database.InitializeDB(); }
             catch (Exception ex) { MessageBox.Show("Greška prilikom pokretanja baze podataka\nGreška:" + ex.Message); this.Close(); }
 
             InitializeComponent();
 
+            ObservableCollection<User> UserList = new ObservableCollection<User>();
+            User user = new User("","","");
 
+            UserList = user.Load();
 
+            foreach(User tempUser in UserList)
+            {
+                Console.WriteLine(tempUser.ToString());
+            }
+
+            
+
+            /*
             //Provjera da baza radi
             List<string> names = User.GetNames();
             foreach (String name in names)
             {
                 Console.WriteLine(name);
-            }
+            }*/
 
             ////Bla bla
         }
@@ -61,12 +73,7 @@ namespace EspressoProject
         /// <summary>
         /// Povezivanje Baze "espresso" sa projektom
         /// </summary>
-        public static void InitializeDB()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["myDatabaseConnection"].ConnectionString;
-            dbConn = new MySqlConnection(connectionString);
-
-        }
+       
 
         #region Login/Logout
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EspressoProject.UserControls.OptionsUserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,17 +23,26 @@ namespace EspressoProject.UserControls
     public partial class OptionsUC : UserControl
     {
         public static UsersUC UsersPage = new UsersUC();
+        public static RegistrationUC RegistrationPage = new RegistrationUC();
         public OptionsUC()
         {
+            
             InitializeComponent();
+            OptionsGrid.Children.Add(UsersPage);
         }
 
         private void UsersButtonClick(object sender, RoutedEventArgs e)
         {
-          
-                OptionsGrid.Children.Clear();
+
+            OptionsGrid.Children.Clear();
             OptionsGrid.Children.Add(UsersPage);
-            
+
+        }
+
+        private void RegistrationButtonClick(object sender, RoutedEventArgs e)
+        {
+            OptionsGrid.Children.Clear();
+            OptionsGrid.Children.Add(RegistrationPage);
         }
     }
 }

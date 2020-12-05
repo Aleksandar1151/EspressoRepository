@@ -10,7 +10,8 @@
         <StackPanel Orientation="Horizontal">
             <Grid Background="Gray" Height="722" Width="250" HorizontalAlignment="Left">
                 <StackPanel>
-                    <Button Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
+                    <Button x:Name="UsersButton" Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
+                    <Button x:Name="RegistrationButton" Content="Registracija" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="RegistrationButtonClick" Height="76"/>
                 </StackPanel>
             </Grid>
 
