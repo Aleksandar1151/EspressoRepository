@@ -34,13 +34,13 @@ namespace EspressoProject.UserControls
             Database.InitializeDB();
             try
             {
-               
+                ListView.ItemsSource = UserList;
                 UserList = new ObservableCollection<User>(User.Load());
-                
+               
             }
             catch (Exception ex) { MessageBox.Show("Greška kod povezivanja sa tabelom.\nRazlog: " + ex.Message); }
 
-            ListView.ItemsSource = UserList;
+           
 
         }
 
@@ -80,10 +80,34 @@ namespace EspressoProject.UserControls
 
                 item.Update();
                    
-                UsersStatusBar.    
+                  
             }
-            CollectionViewSource.GetDefaultView(UserList).Refresh();
             
+
+            //RefreshList();
+
+        }
+
+        private void CreateButtonClick(object sender, RoutedEventArgs e)
+        {
+            
+            User NewUser = new User(0,UsernameTextBox.Text, PasswordTextBox.Text, PrivilegeComboBox.Text);
+            NewUser.Add();
+            RefreshList();
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            ///NASTAVI OVDJE
+            ///User.Remove(merchandiseCollection.Where(i => i.BarKod == BarCodeToDelete).Single());
+            SelectedUser.Delete();
+            RefreshList();
+        }
+
+        public void RefreshList()
+        {
+            UserList = User.Load();
+            CollectionViewSource.GetDefaultView(UserList).Refresh();
         }
     }
 }

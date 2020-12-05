@@ -15,11 +15,13 @@
                     <ComboBoxItem Content="Administrator"/>
                     <ComboBoxItem Content="Konobar"/>
                 </ComboBox>
-                <Button Content="Sačuvaj" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" />
-                <Button Content="Obriši"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,20,10,20" Background="#FF86BFEC"/>
+                <Button Content="Sačuvaj izmjene" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" />
+
+                <Button Content="Kreiraj nalog" Background="SeaGreen" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,00,10,20" Click="CreateButtonClick" />
+
+                <Button Content="Obriši nalog"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,20,10,20" Background="#FF86BFEC" Click="DeleteButtonClick"/>
 
             </StackPanel>
-            <StatusBar Name="UsersStatusBar" HorizontalAlignment="Left" Height="65" Margin="6,652,-758,0" VerticalAlignment="Top" Width="1102"/>
         </Grid>
         <Grid Height="722" Width="766" HorizontalAlignment="Left">
             <ListView x:Name="ListView" Margin="15,27,25,15" FontSize="20" Background="ForestGreen" Foreground="DarkGray" PreviewMouseLeftButtonUp="SelectListCell" >
@@ -31,7 +33,7 @@
                         <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Privilege}" Header="Tip naloga" Width="180"/>
                     </GridView>
                 </ListView.View>
-                <StatusBar Height="100" Width="100"/>
+                
             </ListView>
         </Grid>
 

@@ -71,7 +71,7 @@ namespace EspressoProject.Classes
             try
             {
                 String query = string.Format("INSERT INTO nalozi" +
-              "(id, korisnicko_ime, sifra, tip_naloga) VALUES ('{0}', '{1}', '{2}', '{3}')", Id, Username, Password, Privilege);
+              "(korisnicko_ime, sifra, tip_naloga) VALUES ('{0}', '{1}', '{2}')", Username, Password, Privilege);
 
                 MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
                 Database.dbConn.Open();

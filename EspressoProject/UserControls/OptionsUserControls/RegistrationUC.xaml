@@ -7,6 +7,18 @@
              mc:Ignorable="d" 
             d:DesignHeight="722" d:DesignWidth="1116">
     <Grid Background="WhiteSmoke">
-        <TextBlock HorizontalAlignment="Left" Margin="470,309,0,0" TextWrapping="Wrap" Text="Registration" VerticalAlignment="Top" Height="78" Width="351" FontSize="30"/>
+        <StackPanel >
+            <TextBox x:Name="UsernameTextBox" Text="Korisničko ime" FontSize="26"  Width="250" HorizontalAlignment="Left" Margin="40,50,0,0" Foreground="#616161" />
+            <TextBox x:Name="PasswordTextBox" Text="Lozinka" FontSize="26"  Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" Foreground="#616161" />
+            <ComboBox x:Name="PrivilegeComboBox" Text="Tip naloga" FontSize="26" Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" Foreground="#616161">
+                <ComboBoxItem Content="Administrator"/>
+                <ComboBoxItem Content="Konobar"/>
+            </ComboBox>
+            <Button Content="Dodaj nalog" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20"  />
+            
+
+        </StackPanel>
     </Grid>
+    
+    
 </UserControl>
