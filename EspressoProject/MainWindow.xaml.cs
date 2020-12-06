@@ -49,28 +49,11 @@ namespace EspressoProject
             InitializeComponent();
 
 
-            GridMain.Children.Clear();
-            GridMain.Children.Add(OptionsPage);
-
-            
-            //Provjera da baza radi
-            /*
-             * Collection = User.Load();
-            foreach (User name in Collection)
-            {
-                Console.WriteLine(name);
-            }
-            */
-            ////Bla bla
         }
 
 
 
-        /// <summary>
-        /// Povezivanje Baze "espresso" sa projektom
-        /// </summary>
-       
-
+        
         #region Login/Logout
 
         /// <summary>
@@ -80,29 +63,54 @@ namespace EspressoProject
         /// <param name="e"></param>
         private async void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-            
-            var progress = new Progress<int>(value => pbStatus.Value = value);
-            await Task.Run(() =>
+            StatusBar.Items.Clear();
+
+            if(CheckCredentials())
             {
-                for (int i = 0; i < 100; i++)
+                #region ProgressBar
+                var progress = new Progress<int>(value => pbStatus.Value = value);
+                await Task.Run(() =>
                 {
-                    ((IProgress<int>)progress).Report(i);
-                    Thread.Sleep(10);
+                    for (int i = 0; i < 100; i++)
+                    {
+                        ((IProgress<int>)progress).Report(i);
+                        Thread.Sleep(10);
+                    }
+                });
+                //await Task.Delay(1000);
+                Thread.Sleep(700);
+                pbStatus.Value = 0;
+                #endregion
+
+                GridMain.Children.Add(MainPage);
+                StorageButton.Visibility = Visibility.Visible;
+                PopupBoxName.Visibility = Visibility.Visible;
+                NameBox.Text = "";
+                PasswordBox.Text = "";
+                LostFocusHelper(NameBox, "Korisničko ime");
+                LostFocusHelper(PasswordBox, "Lozinka");
+            }
+            else
+            {
+                StatusBar.Items.Add("Pogrešni podaci.");
+            }
+
+            
+
+        }
+
+        private bool CheckCredentials()
+        {
+            foreach(User user in UsersUC.UserList)
+            {
+                if(user.Username.Equals(NameBox.Text) && user.Password.Equals(PasswordBox.Text))
+                {
+                    return true;
                 }
-            });
-            //await Task.Delay(1000);
-            Thread.Sleep(700);
+            }
+            return false;
 
-            GridMain.Children.Add(MainPage);
-            StorageButton.Visibility = Visibility.Visible;
-            PopupBoxName.Visibility = Visibility.Visible;
-
-            pbStatus.Value = 0;
-            NameBox.Text = "";
-            PasswordBox.Text = "";
-            LostFocusHelper(NameBox, "Korisničko ime");
-            LostFocusHelper(PasswordBox, "Lozinka");
-
+           
         }
 
         private async void LogOutButtonClick(object sender, RoutedEventArgs e)

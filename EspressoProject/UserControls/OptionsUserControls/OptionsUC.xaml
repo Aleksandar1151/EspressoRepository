@@ -16,7 +16,7 @@
                             <materialDesign:PackIcon Kind="Settings" Width="100" Height="100" Foreground="Gray"/>
                         </Button>
                         <Button x:Name="UsersButton" Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LightGray" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
-                        <Button x:Name="RegistrationButton" Content="Registracija" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LightGray" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="RegistrationButtonClick" Height="76"/>
+                        
                     </StackPanel>
                 </Grid>
             </Border>

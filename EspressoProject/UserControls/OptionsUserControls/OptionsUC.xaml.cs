@@ -1,19 +1,5 @@
-﻿using EspressoProject.UserControls.OptionsUserControls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using EspressoProject.Classes;
 
 namespace EspressoProject.UserControls
 {
@@ -23,7 +9,7 @@ namespace EspressoProject.UserControls
     public partial class OptionsUC : UserControl
     {
         public static UsersUC UsersPage = new UsersUC();
-        public static RegistrationUC RegistrationPage = new RegistrationUC();
+        
         public OptionsUC()
         {
             
@@ -39,10 +25,6 @@ namespace EspressoProject.UserControls
 
         }
 
-        private void RegistrationButtonClick(object sender, RoutedEventArgs e)
-        {
-            OptionsGrid.Children.Clear();
-            OptionsGrid.Children.Add(RegistrationPage);
-        }
+       
     }
 }

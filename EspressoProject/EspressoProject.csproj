@@ -120,9 +120,6 @@
     <Compile Include="UserControls\OptionsUserControls\OptionsUC.xaml.cs">
       <DependentUpon>OptionsUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\OptionsUserControls\RegistrationUC.xaml.cs">
-      <DependentUpon>RegistrationUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\StorageUC.xaml.cs">
       <DependentUpon>StorageUC.xaml</DependentUpon>
     </Compile>
@@ -150,10 +147,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\OptionsUserControls\OptionsUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\OptionsUserControls\RegistrationUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

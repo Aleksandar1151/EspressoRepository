@@ -76,11 +76,10 @@ namespace EspressoProject.Classes
                 MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
                 Database.dbConn.Open();
                 cmd.ExecuteNonQuery();
-                int id = (int)cmd.LastInsertedId;
+                Id = (int)cmd.LastInsertedId;
                 Database.dbConn.Close();
 
-                //User NewUser = new User(Id,Username, Password, Privilege);
-                // UsersCollection.Add(NewUser);
+                
             }
             catch (Exception ex) { MessageBox.Show("Greška prilikom kreiranja naloga u bazi.\nRazlog: " + ex.Message); }
 

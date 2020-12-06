@@ -12,7 +12,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5 0">
                 <Button x:Name="StorageButton" Visibility="Hidden" Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick" Margin="0,0,1180,0"/>
 
-                <materialDesign:PopupBox Name="PopupBoxName" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" Foreground="#FFA2A2A2">
+                <materialDesign:PopupBox Name="PopupBoxName" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" Foreground="#FFA2A2A2" Visibility="Hidden">
                     <StackPanel Width="150">
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="OptionsButtonClick">
                             <materialDesign:PackIcon Kind="Settings" Foreground="#FFA2A2A2" Width="25" Height="25" />
@@ -35,10 +35,11 @@
         <Grid x:Name="GridMain" Height="722" Background="WhiteSmoke">
             <Button Content="PRIJAVA" Height="Auto" Margin="156,425,758,239" Click="LoginButtonClick" FontSize="25" />
             <TextBox Name="NameBox" HorizontalAlignment="Left" Height="72" Margin="160,176,0,0" TextWrapping="Wrap" Text="Korisničko ime" VerticalAlignment="Top" Width="450" FontSize="30" GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161"/>
-            <TextBox Name="PasswordBox" HorizontalAlignment="Left" Height="72" Margin="159,276,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Width="453" FontSize="30" Foreground="#616161" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus"/>
+            <TextBox Name="PasswordBox" HorizontalAlignment="Left" Height="72" Margin="159,276,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Width="453" FontSize="30" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus" Foreground="#616161" />
             <Button Content="Ugao" Margin="1290,673,2,1" Height="Auto"/>
             <ProgressBar Name="pbStatus" HorizontalAlignment="Left" Height="558" Margin="734,60,0,0" VerticalAlignment="Top" Width="563" RenderTransformOrigin="0.475,0.51" Orientation="Vertical" Foreground="#FF964315" Background="WhiteSmoke" BorderBrush="White" />
             <Image Name="CoffeeImage" HorizontalAlignment="Left" Height="587" Margin="709,53,0,0" VerticalAlignment="Top" Width="586" RenderTransformOrigin="-0.031,0.56" Source="Resources/LoginCoffee.png"/>
+            <StatusBar Name="StatusBar" Background="WhiteSmoke" FontSize="25" Foreground="#616161" HorizontalAlignment="Left" Height="64" Margin="75,638,0,0" VerticalAlignment="Top" Width="1039"/>
 
 
         </Grid>

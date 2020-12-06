@@ -34,13 +34,14 @@ namespace EspressoProject.UserControls
             Database.InitializeDB();
             try
             {
-                ListView.ItemsSource = UserList;
+                
                 UserList = new ObservableCollection<User>(User.Load());
-               
+                ListView.ItemsSource = UserList;
+
             }
             catch (Exception ex) { MessageBox.Show("Greška kod povezivanja sa tabelom.\nRazlog: " + ex.Message); }
 
-           
+            
 
         }
 
@@ -82,10 +83,10 @@ namespace EspressoProject.UserControls
                    
                   
             }
-            
 
-            //RefreshList();
 
+            CollectionViewSource.GetDefaultView(UserList).Refresh();
+            RefreshTextBoxes();
         }
 
         private void CreateButtonClick(object sender, RoutedEventArgs e)
@@ -93,21 +94,79 @@ namespace EspressoProject.UserControls
             
             User NewUser = new User(0,UsernameTextBox.Text, PasswordTextBox.Text, PrivilegeComboBox.Text);
             NewUser.Add();
-            RefreshList();
+            UserList.Add(NewUser);
+            CollectionViewSource.GetDefaultView(UserList).Refresh();
+            RefreshTextBoxes();
+
+
+
         }
 
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            ///NASTAVI OVDJE
-            ///User.Remove(merchandiseCollection.Where(i => i.BarKod == BarCodeToDelete).Single());
+            
+            UserList.Remove(UserList.Where(i => i.Id == SelectedUser.Id).Single());
             SelectedUser.Delete();
-            RefreshList();
+            CollectionViewSource.GetDefaultView(UserList).Refresh();
+            RefreshTextBoxes();
         }
 
-        public void RefreshList()
+        #region TextBox Animations
+
+        private void GotFocusHelper(TextBox name, string text)
         {
-            UserList = User.Load();
-            CollectionViewSource.GetDefaultView(UserList).Refresh();
+
+            if (name.Text == text)
+            {
+                name.Text = "";
+                var bc = new BrushConverter();
+                name.Foreground = (Brush)bc.ConvertFrom("#424242");
+                name.FontWeight = FontWeights.Bold;
+            }
+
         }
+
+        private void LostFocusHelper(TextBox name, string text)
+        {
+            if (name.Text == "")
+            {
+                name.Text = text;
+                var bc = new BrushConverter();
+                name.Foreground = (Brush)bc.ConvertFrom("#616161");
+                name.FontWeight = FontWeights.Normal;
+            }
+        }
+
+        private void NameBoxGotFocus(object sender, RoutedEventArgs e)
+        {
+            GotFocusHelper(UsernameTextBox, "Korisničko ime");
+        }
+
+        private void NameBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            LostFocusHelper(UsernameTextBox, "Korisničko ime");
+        }
+
+
+
+        private void PasswordBoxGotFocus(object sender, RoutedEventArgs e)
+        {
+            GotFocusHelper(PasswordTextBox, "Lozinka");
+        }
+
+        private void PasswordBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            LostFocusHelper(PasswordTextBox, "Lozinka");
+        }
+
+        public void RefreshTextBoxes()
+        {
+            UsernameTextBox.Text = "Korisničko ime";
+            PasswordTextBox.Text = "Lozinka";
+            PrivilegeComboBox.SelectedIndex = -1;
+            LostFocusHelper(UsernameTextBox, "Korisničko ime");
+            LostFocusHelper(PasswordTextBox, "Lozinka");
+        }
+        #endregion
     }
 }
