@@ -109,7 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Article.cs" />
     <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\Merchandise.cs" />
+    <Compile Include="Classes\Receipt.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="UserControls\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
