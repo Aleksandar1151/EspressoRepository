@@ -4,15 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EspressoProject.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
               d:DesignHeight="722" d:DesignWidth="1366">
     <Grid Background="WhiteSmoke">
         <StackPanel Orientation="Horizontal">
-            <Grid Background="Gray" Height="722" Width="250" HorizontalAlignment="Left">
-                <StackPanel>
-                    <Button Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
-                </StackPanel>
-            </Grid>
+            <Border BorderThickness="4" CornerRadius="10"  BorderBrush="Gray" Height="650" Margin="10,0,0,0" >
+                <Grid Background="Gray" Height="650" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel>
+                        <Button Height="150" Background="LightGray" BorderBrush="{x:Null}" Margin="12" >
+                            <materialDesign:PackIcon Kind="Settings" Width="100" Height="100" Foreground="Gray"/>
+                        </Button>
+                        <Button x:Name="UsersButton" Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LightGray" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
 
             <Grid x:Name="OptionsGrid" Height="722" Background="WhiteSmoke" Width="1116">
                 
