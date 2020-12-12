@@ -24,6 +24,7 @@ namespace EspressoProject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// sani
     public partial class MainWindow : Window
     {
         //Stranice
@@ -51,7 +52,7 @@ namespace EspressoProject
                 Console.WriteLine(name);
             }
 
-
+            ////Bla bla
         }
 
 
