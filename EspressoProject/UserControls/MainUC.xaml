@@ -8,13 +8,61 @@
              d:DesignHeight="722" d:DesignWidth="1366">
 
     <StackPanel Orientation="Horizontal" >
-        <Grid Background="White" Height="738" Width="883" HorizontalAlignment="Left">            
+        <Grid Background="White" Height="738" Width="883" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Name="NameSearchBox" HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Naziv artikla" VerticalAlignment="Top" Width="400" FontSize="24"  GotFocus="NameSearchBoxGotFocus" LostFocus="NameSearchBoxLostFocus" Foreground="#616161"/>
+            <TextBox Name="BarcodeSearchBox" HorizontalAlignment="Left" Height="40" Margin="458,10,0,0" TextWrapping="Wrap" Text="Barcode" VerticalAlignment="Top" Width="400" FontSize="24"  GotFocus="BarcodeSearchBoxGotFocus" LostFocus="BarcodeSearchBoxLostFocus" Foreground="#616161"/>
+            <Menu Grid.Row="1">
+                <MenuItem Header="Sve" FontSize="24"  >
 
+                </MenuItem>
+                <MenuItem Header="Topli napici" FontSize="24">
+
+                </MenuItem>
+                <MenuItem Header="Voda" FontSize="24">
+
+                </MenuItem>
+                <MenuItem Header="Sokovi" FontSize="24">
+
+                </MenuItem>
+                <MenuItem Header="Pivo" FontSize="24">
+
+                </MenuItem>
+                <MenuItem Header="Vino" FontSize="24">
+
+                </MenuItem>
+                <MenuItem Header="Žestoka pića" FontSize="24">
+
+                </MenuItem>
+            </Menu>
         </Grid>
-        <Grid Background="Wheat"  Height="738" Width="483" HorizontalAlignment="Right">
-            
+        <Grid Background="LightBlue"  Height="738" Width="483" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Korisnik: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <TextBlock Grid.Column="1" Grid.Row="0"  Name="UsernameBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="ulogovaniKorisnik" VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <TextBlock Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Broj računa: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <TextBlock Grid.Column="1" Grid.Row="1"  Name="ReceiptNumBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="brRacuna " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Ukupno: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <TextBlock Grid.Column="1" Grid.Row="3"  Name="SumBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="ukupnoZaUplatu " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
+            <Button Grid.Column="0" Grid.Row="4" Name="CancleButton" Content="Poništi" FontSize="35" HorizontalAlignment="Left" Height="60" Margin="10,10,10,10" VerticalAlignment="Top" Width="222" Foreground="WhiteSmoke"/>
+            <Button Grid.Column="1" Grid.Row="4" Name="ConfirmButton" Content="Potvrdi" FontSize="35" HorizontalAlignment="Right" Height="60" Margin="10,10,10,10" VerticalAlignment="Top" Width="222" Foreground="WhiteSmoke"/>
+            <Rectangle Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="30,30,30,30" Fill="WhiteSmoke"/>
+
         </Grid>
 
     </StackPanel>
-   
+
 </UserControl>
