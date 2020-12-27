@@ -7,7 +7,27 @@
              mc:Ignorable="d" 
              d:DesignHeight="722" d:DesignWidth="1366">
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="621,374,0,0" TextWrapping="Wrap" Text="SKLADIŠTE" VerticalAlignment="Top" Height="78" Width="174" FontSize="30" />
+        <TextBlock HorizontalAlignment="Left" Margin="621,39,0,0" TextWrapping="Wrap" Text="SKLADIŠTE" VerticalAlignment="Top" Height="45" Width="174" FontSize="30" />
+        <Grid Background="White" VerticalAlignment="Bottom" Height="630" Width="1300" Margin="66,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnItems" Content="ROBA" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnItems_Click"/>
+            <Button x:Name="btnSoldItems" Content="PRODANA ROBA" HorizontalAlignment="Left" Margin="325,0,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnSoldItems_click"/>
+            <ListBox x:Name="lbItems" HorizontalAlignment="Left" Height="514" Margin="8,38,0,0" VerticalAlignment="Top" Width="325" >
+            </ListBox>
+            <Button x:Name="btnBills" Content="RACUNI" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="650" Height="30"/>
+            <ListBox x:Name="lbBills" Grid.Column="1" HorizontalAlignment="Left" Height="514" Margin="8,38,0,0" VerticalAlignment="Top" Width="650"/>
+            <Button x:Name="btnRefreshItems" Content="UCITAJ PONOVO ROBU" HorizontalAlignment="Left" Margin="0,560,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnRefreshItems_click"/>
+            <Button x:Name="btnRefreshSoldItems" Content="UCITAJ PONOVO PRODANU ROBU" HorizontalAlignment="Left" Margin="325,560,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnRefreshSoldItems_click"/>
+            <Button x:Name="btnRefreshBills" Content="UCITAJ PONOVO RACUNE" Grid.Column="1" HorizontalAlignment="Left" Margin="0,560,0,0" VerticalAlignment="Top" Width="325" Height="30"/>
+            <Button x:Name="btnCloseBills" Content="OBRISI RACUNE" Grid.Column="1" HorizontalAlignment="Left" Margin="325,560,0,0" VerticalAlignment="Top" Width="325" Height="30"/>
+            <Button x:Name="btnDeleteItems" Content="OBRISI ROBU" HorizontalAlignment="Left" Margin="0,590,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnDeleteItems_click"/>
+            <Button x:Name="btnDeleteSoldItems" Content="OBRISI PRODANU ROBU" HorizontalAlignment="Left" Margin="325,590,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnDeleteSoldItems_click"/>
+            <ListBox x:Name="lbSoldItems" HorizontalAlignment="Left" Height="514" Margin="325,38,0,0" VerticalAlignment="Top" Width="325"/>
+        </Grid>
 
     </Grid>
 </UserControl>
