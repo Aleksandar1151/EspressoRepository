@@ -26,6 +26,7 @@ namespace EspressoProject
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// sani
+    /// 
     public partial class MainWindow : Window
     {
         //Stranice
