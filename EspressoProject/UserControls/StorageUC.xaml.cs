@@ -28,7 +28,7 @@ namespace EspressoProject.UserControls
         public StorageUC()
         {
             try { InitializeDB(); }
-            catch (Exception ex) { MessageBox.Show("Greška prilikom pokretanja baze podataka\nGreška:" + ex.Message); }
+            catch (Exception ex) { }
             InitializeComponent();
         }
 

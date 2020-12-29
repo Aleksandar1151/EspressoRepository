@@ -4,8 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EspressoProject.UserControls"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
              mc:Ignorable="d" 
-             d:DesignHeight="722" d:DesignWidth="1116" Background="WhiteSmoke">
+             d:DesignHeight="722" d:DesignWidth="1116" >
     <StackPanel Orientation="Horizontal">
         <Grid Background="WhiteSmoke" Height="722" Width="350" HorizontalAlignment="Left">
             <StackPanel >
@@ -15,15 +20,14 @@
                     <ComboBoxItem Content="Administrator"/>
                     <ComboBoxItem Content="Konobar"/>
                 </ComboBox>
-                <Button Content="Sačuvaj izmjene" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" />
+                <Button Content="Sačuvaj izmjene" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" Style="{DynamicResource MaterialDesignRaisedDarkButton}" />
 
-                <Button Content="Kreiraj nalog" Background="SeaGreen" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,00,10,20" Click="CreateButtonClick" />
-
-                <Button Content="Obriši nalog"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,20,10,20" Background="#FF86BFEC" Click="DeleteButtonClick"/>
+                <Button Content="Kreiraj nalog"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,00,10,20" Click="CreateButtonClick" Style="{DynamicResource MaterialDesignRaisedDarkButton}" />
+                <Button Content="Obriši nalog"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,0,0,20" Click="DeleteButtonClick" Style="{DynamicResource MaterialDesignFlatButton}"/>
 
             </StackPanel>
         </Grid>
-        <Grid Height="722" Width="766" HorizontalAlignment="Left">
+        <Grid Height="722" Width="766" HorizontalAlignment="Left" Background="WhiteSmoke">
             <ListView x:Name="ListView" Margin="15,27,25,15" FontSize="20" Background="ForestGreen" Foreground="DarkGray" PreviewMouseLeftButtonUp="SelectListCell" >
                 <ListView.View>
                     <GridView>
