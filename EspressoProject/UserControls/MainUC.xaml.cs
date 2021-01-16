@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EspressoProject.Classes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +73,20 @@ namespace EspressoProject.UserControls
             LostFocusHelper(BarcodeSearchBox, "Barcode");
         }
 
+        private void getAllBeaverages(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<Article> drinks = Article.Load();
+            int k = 0;
+            //napravi velicinu grida gridDrinks
+            gridDrinks.RowDefinitions.Add(new RowDefinition());
+            foreach (Article a in drinks)
+            {
 
+                button1.Visibility = Visibility.Visible;
+                button1.Content = a.Name;
+                k++;
+            }
+        }
     }
 }
 
