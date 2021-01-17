@@ -11,6 +11,7 @@ namespace EspressoProject.Classes
 {
     public class Article
     {
+<<<<<<< Updated upstream
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -37,12 +38,35 @@ namespace EspressoProject.Classes
 
                 String query = "SELECT * FROM roba;";
 
+=======
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public String Price { get; set; }
+        public String quantity { get; set; }
+
+        public Article(int ID, String Name, String Price, String quantity)
+        {
+            this.ID = ID;
+            this.Name = Name;
+            this.Price = Price;
+            this.quantity = quantity;
+        }
+
+        public static ObservableCollection<Article> Load()
+        {
+            ObservableCollection<Article> resultArticles = new ObservableCollection<Article>();
+            Database.InitializeDB();
+            try
+            {
+                String query = "SELECT * FROM roba";
+>>>>>>> Stashed changes
                 MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
 
 
                 Database.dbConn.Open();
 
                 MySqlDataReader reader = cmd.ExecuteReader();
+<<<<<<< Updated upstream
 
 
                 while (reader.Read())
@@ -129,6 +153,20 @@ namespace EspressoProject.Classes
                             + "Cijena: [" + Price + "]"
                             + "Kolicina: [" + Quantity + "]";
             return Result;
+=======
+                while (reader.Read())
+                {
+                    int ID = Convert.ToInt32(reader["id"]);
+                    String Name = reader["naziv_robe"].ToString();
+                    String Price = reader["cijena"].ToString();
+                    String quantity = reader["kolicina"].ToString();
+                    Article article = new Article(ID, Name, Price, quantity);
+                    resultArticles.Add(article);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Greska prilikom uzimanja robe iz baze!!!!!!\nRazlog: " + ex.Message); }
+            return resultArticles;
+>>>>>>> Stashed changes
         }
     }
 }

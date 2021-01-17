@@ -8,25 +8,31 @@
              d:DesignHeight="722" d:DesignWidth="1366">
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="621,39,0,0" TextWrapping="Wrap" Text="SKLADIŠTE" VerticalAlignment="Top" Height="45" Width="174" FontSize="30" />
-        <Grid Background="White" VerticalAlignment="Bottom" Height="630" Width="1300" Margin="66,0,0,0">
+        <Grid Background="White" VerticalAlignment="Bottom" Height="630" Width="1366" Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                 </ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnItems" Content="ROBA" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnItems_Click"/>
-            <Button x:Name="btnSoldItems" Content="PRODANA ROBA" HorizontalAlignment="Left" Margin="325,0,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnSoldItems_click"/>
-            <ListBox x:Name="lbItems" HorizontalAlignment="Left" Height="514" Margin="8,38,0,0" VerticalAlignment="Top" Width="325" >
-            </ListBox>
-            <Button x:Name="btnBills" Content="RACUNI" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="650" Height="30"/>
-            <ListBox x:Name="lbBills" Grid.Column="1" HorizontalAlignment="Left" Height="514" Margin="8,38,0,0" VerticalAlignment="Top" Width="650"/>
-            <Button x:Name="btnRefreshItems" Content="UCITAJ PONOVO ROBU" HorizontalAlignment="Left" Margin="0,560,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnRefreshItems_click"/>
-            <Button x:Name="btnRefreshSoldItems" Content="UCITAJ PONOVO PRODANU ROBU" HorizontalAlignment="Left" Margin="325,560,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnRefreshSoldItems_click"/>
-            <Button x:Name="btnRefreshBills" Content="UCITAJ PONOVO RACUNE" Grid.Column="1" HorizontalAlignment="Left" Margin="0,560,0,0" VerticalAlignment="Top" Width="325" Height="30"/>
-            <Button x:Name="btnCloseBills" Content="OBRISI RACUNE" Grid.Column="1" HorizontalAlignment="Left" Margin="325,560,0,0" VerticalAlignment="Top" Width="325" Height="30"/>
-            <Button x:Name="btnDeleteItems" Content="OBRISI ROBU" HorizontalAlignment="Left" Margin="0,590,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnDeleteItems_click"/>
-            <Button x:Name="btnDeleteSoldItems" Content="OBRISI PRODANU ROBU" HorizontalAlignment="Left" Margin="325,590,0,0" VerticalAlignment="Top" Width="325" Height="30" Click="btnDeleteSoldItems_click"/>
-            <ListBox x:Name="lbSoldItems" HorizontalAlignment="Left" Height="514" Margin="325,38,0,0" VerticalAlignment="Top" Width="325"/>
+            <ListView x:Name="articleList" HorizontalAlignment="Left" Height="250" Margin="133,50,0,0" VerticalAlignment="Top" Width="550">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="ArticleID" DisplayMemberBinding="{Binding ID}" Header="Id" Width="100"/>
+                        <GridViewColumn x:Name="ArticleName" DisplayMemberBinding="{Binding Name}" Header="Naziv robe" Width="150"/>
+                        <GridViewColumn x:Name="ArticlePrice" DisplayMemberBinding="{Binding Price}" Header="Cijena" Width="150"/>
+                        <GridViewColumn x:Name="ArticleQuantity" DisplayMemberBinding="{Binding quantity}" Header="Kolicina" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView HorizontalAlignment="Left" Height="100" Margin="399,470,0,0" VerticalAlignment="Top" Width="100">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBox HorizontalAlignment="Left" Height="50" Margin="280,0,0,0" TextWrapping="Wrap" Text="ROBA U SKLADIŠTU" VerticalAlignment="Top" Width="Auto" FontSize="25" FontWeight="Bold"/>
+
         </Grid>
 
     </Grid>
