@@ -123,6 +123,9 @@
     <Compile Include="UserControls\OptionsUserControls\OptionsUC.xaml.cs">
       <DependentUpon>OptionsUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ReceiptUC.xaml.cs">
+      <DependentUpon>ReceiptUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\StorageUC.xaml.cs">
       <DependentUpon>StorageUC.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\OptionsUserControls\OptionsUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReceiptUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
