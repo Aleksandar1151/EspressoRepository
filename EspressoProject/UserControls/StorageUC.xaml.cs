@@ -30,6 +30,11 @@ namespace EspressoProject.UserControls
         public static ObservableCollection<Article> SoldArticleList { get; set; }
         public StorageUC()
         {
+<<<<<<< HEAD
+=======
+            try { InitializeDB(); }
+            catch (Exception ex) { }
+>>>>>>> Develop
             InitializeComponent();
             Database.InitializeDB();
             try

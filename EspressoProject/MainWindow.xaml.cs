@@ -102,7 +102,13 @@ namespace EspressoProject
 
         private bool CheckCredentials()
         {
+<<<<<<< HEAD
             foreach (User user in UsersUC.UserList)
+=======
+            return true; // Skloni ovaj red kada želiš da provjeravaš Ime i Šifru
+
+            foreach(User user in UsersUC.UserList)
+>>>>>>> Develop
             {
                 if (user.Username.Equals(NameBox.Text) && user.Password.Equals(PasswordBox.Text))
                 {
