@@ -123,12 +123,6 @@
     <Compile Include="UserControls\OptionsUserControls\OptionsUC.xaml.cs">
       <DependentUpon>OptionsUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\OptionsUserControls\ReportsUC.xaml.cs">
-      <DependentUpon>ReportsUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\OptionsUserControls\ThemesUC.xaml.cs">
-      <DependentUpon>ThemesUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\StorageUC.xaml.cs">
       <DependentUpon>StorageUC.xaml</DependentUpon>
     </Compile>

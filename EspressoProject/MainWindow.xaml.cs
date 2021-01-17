@@ -54,7 +54,7 @@ namespace EspressoProject
 
 
 
-        
+
         #region Login/Logout
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace EspressoProject
         {
             StatusBar.Items.Clear();
 
-            if(CheckCredentials())
+            if (CheckCredentials())
             {
                 #region ProgressBar
                 var progress = new Progress<int>(value => pbStatus.Value = value);
@@ -96,7 +96,7 @@ namespace EspressoProject
                 StatusBar.Items.Add("Pogrešni podaci.");
             }
 
-            
+
 
         }
 
@@ -106,14 +106,14 @@ namespace EspressoProject
 
             foreach(User user in UsersUC.UserList)
             {
-                if(user.Username.Equals(NameBox.Text) && user.Password.Equals(PasswordBox.Text))
+                if (user.Username.Equals(NameBox.Text) && user.Password.Equals(PasswordBox.Text))
                 {
                     return true;
                 }
             }
             return false;
 
-           
+
         }
 
         private async void LogOutButtonClick(object sender, RoutedEventArgs e)
@@ -133,7 +133,7 @@ namespace EspressoProject
         #endregion
 
         #region Transitions
-       
+
         private void StorageButtonClick(object sender, RoutedEventArgs e)
         {
             GridMain.Children.RemoveAt(GridMain.Children.Count - 1);
@@ -148,6 +148,12 @@ namespace EspressoProject
         private void ShutDownButton(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void MainButtonClick(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.RemoveAt(GridMain.Children.Count - 1);
+            GridMain.Children.Add(MainPage);
         }
         #endregion
 
@@ -188,7 +194,7 @@ namespace EspressoProject
             LostFocusHelper(NameBox, "Korisničko ime");
         }
 
-        
+
 
         private void PasswordBoxGotFocus(object sender, RoutedEventArgs e)
         {
@@ -199,8 +205,8 @@ namespace EspressoProject
         {
             LostFocusHelper(PasswordBox, "Lozinka");
         }
-        #endregion
 
-       
+        #endregion
     }
+
 }

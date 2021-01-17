@@ -12,6 +12,12 @@ namespace EspressoProject.Classes
     public class Article
     {
 
+        public int IDSoldArticle { get; set; }
+        public int IDReceipt { get; set; }
+        public String nameOfSoldArticle { get; set; }
+        public String priceOfSoldArticle { get; set; }
+        public String quantityOfSoldArticle { get; set; }
+        public String dateOfSoldArticle { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
@@ -25,8 +31,17 @@ namespace EspressoProject.Classes
             this.Quantity = Quantity;
         }
 
+        public Article(int IDSoldArticle, int IDReceipt, String nameOfSoldArticle, String priceOfSoldArticle, String quantityOfSoldArticle, String dateOfSoldArticle)
+        {
+            this.IDSoldArticle = IDSoldArticle;
+            this.IDSoldArticle = IDReceipt;
+            this.nameOfSoldArticle = nameOfSoldArticle;
+            this.priceOfSoldArticle = priceOfSoldArticle;
+            this.quantityOfSoldArticle = quantityOfSoldArticle;
+            this.dateOfSoldArticle = dateOfSoldArticle;
+        }
 
-        #region Database
+
         public static ObservableCollection<Article> Load()
         {
             ObservableCollection<Article> ResultCollection = new ObservableCollection<Article>();
@@ -35,7 +50,7 @@ namespace EspressoProject.Classes
             try
             {
 
-                String query = "SELECT * FROM roba;";
+                String query = "SELECT * FROM roba";
 
                 MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
 
@@ -43,7 +58,6 @@ namespace EspressoProject.Classes
                 Database.dbConn.Open();
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-
 
                 while (reader.Read())
                 {
@@ -59,76 +73,39 @@ namespace EspressoProject.Classes
 
                 Database.dbConn.Close();
             }
-            catch (Exception ex) { MessageBox.Show("Greška prilikom preuzimanja naloga iz baze!!!!!\nRazlog: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Greška prilikom preuzimanja robe iz baze!!!!!\nRazlog: " + ex.Message); }
 
             return ResultCollection;
         }
 
-
-        /*public ObservableCollection<Article> Add()
+        public static ObservableCollection<Article> LoadSoldArticles()
         {
-            ObservableCollection<Article> ResultCollection = new ObservableCollection<Article>();
+            ObservableCollection<Article> ResultArticles = new ObservableCollection<Article>();
+            Database.InitializeDB();
             try
             {
-                String query = string.Format("INSERT INTO nalozi" +
-              "(korisnicko_ime, sifra, tip_naloga) VALUES ('{0}', '{1}', '{2}')", Articlename, Password, Privilege);
-
+                String query = "SELECT * FROM prodana_roba";
                 MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
+
+
                 Database.dbConn.Open();
-                cmd.ExecuteNonQuery();
-                Id = (int)cmd.LastInsertedId;
-                Database.dbConn.Close();
 
-
-            }
-            catch (Exception ex) { MessageBox.Show("Greška prilikom kreiranja naloga u bazi.\nRazlog: " + ex.Message); }
-
-
-            return ResultCollection;
-        }
-
-        public void Update()
-        {
-            try
-            {
-                String query = string.Format("UPDATE nalozi SET " +
-               "korisnicko_ime='{0}', sifra='{1}', tip_naloga='{2}' WHERE (`id` = '{3}')"
-               , Articlename, Password, Privilege, Id);
-
-                MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
-                Database.dbConn.Open();
-                cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int IDSoldArticle = Convert.ToInt32(reader["id"]);
+                    int IDReceipt = Convert.ToInt32(reader["id_racuna"]);
+                    String nameOfSoldArticle = reader["naziv"].ToString();
+                    String priceOfSoldArticle = reader["cijena"].ToString();
+                    String quantityOfSoldArticle = reader["kolicina"].ToString();
+                    String dateOfSoldArticle = reader["datum"].ToString();
+                    Article article = new Article(IDSoldArticle, IDReceipt, nameOfSoldArticle, priceOfSoldArticle, quantityOfSoldArticle, dateOfSoldArticle);
+                    ResultArticles.Add(article);
+                }
                 Database.dbConn.Close();
             }
-            catch (Exception ex) { MessageBox.Show("Greška prilikom mijenjanja naloga u bazi.\nRazlog: " + ex.Message); }
-        }
-
-        public void Delete()
-        {
-            try
-            {
-                String query = string.Format("DELETE FROM nalozi WHERE id = '{0}'", Id);
-                MySqlCommand cmd = new MySqlCommand(query, Database.dbConn);
-                Database.dbConn.Open();
-                cmd.ExecuteNonQuery();
-                Database.dbConn.Close();
-
-            }
-            catch (Exception ex) { MessageBox.Show("Greška prilikom brisanja naloga.\nRazlog: " + ex.Message); }
-
-        }
-
-
-        #endregion
-*/
-
-        #endregion
-        override public string ToString()
-        {
-            string Result = "Naziv: [" + Name + "]"
-                            + "Cijena: [" + Price + "]"
-                            + "Kolicina: [" + Quantity + "]";
-            return Result;
+            catch (Exception ex) { MessageBox.Show("Greška prilikom preuzimanja prodane robe iz baze!!!!!\nRazlog: " + ex.Message); }
+            return ResultArticles;
         }
     }
 }
