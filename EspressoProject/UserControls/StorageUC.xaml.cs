@@ -25,7 +25,9 @@ namespace EspressoProject.UserControls
     /// </summary>
     public partial class StorageUC : UserControl
     {
+        public static ReceiptUC ReceiptPage = new ReceiptUC();
         public static ObservableCollection<Article> ArticleList { get; set; }
+        public static ObservableCollection<Article> SoldArticleList { get; set; }
         public StorageUC()
         {
             InitializeComponent();
@@ -34,8 +36,16 @@ namespace EspressoProject.UserControls
             {
                 ArticleList = new ObservableCollection<Article>(Article.Load());
                 articleList.ItemsSource = ArticleList;
+                SoldArticleList = new ObservableCollection<Article>(Article.LoadSoldArticles());
+                soldArticlesList.ItemsSource = SoldArticleList;
             }
             catch (Exception ex) { MessageBox.Show("Greška kod povezivanja sa tabelom.\nRazlog: " + ex.Message); }
+        }
+
+        private void ReceiptButtonClick(object sender, RoutedEventArgs e)
+        {
+            StorageGrid.Children.Clear();
+            StorageGrid.Children.Add(ReceiptPage);
         }
     }
 }

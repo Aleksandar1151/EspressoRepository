@@ -9,9 +9,9 @@
 
     <StackPanel>
         <Grid Background="WhiteSmoke" Height="46" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5 0">
-                <Button x:Name="StorageButton" Visibility="Hidden" Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick" Margin="0,0,1180,0"/>
-
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0" Width="1361">
+                <Button x:Name="StorageButton" Visibility="Hidden" Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick" Margin="200,0,1000,0"/>
+                <Button x:Name="MainButton" Content="Glavni prozor" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="-400,0,200,0" Click="MainButtonClick"/>
                 <materialDesign:PopupBox Name="PopupBoxName" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" Foreground="#FFA2A2A2" Visibility="Hidden">
                     <StackPanel Width="150">
                         <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="OptionsButtonClick">
@@ -28,6 +28,7 @@
 
                     </StackPanel>
                 </materialDesign:PopupBox>
+
             </StackPanel>
 
 
