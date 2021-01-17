@@ -8,76 +8,55 @@
              d:DesignHeight="722" d:DesignWidth="1366">
 
     <StackPanel Orientation="Horizontal" >
-        <Grid Background="White" Height="738" Width="883" HorizontalAlignment="Left">
+        <Grid Background="White" Height="720" Width="883" HorizontalAlignment="Left" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="65"/>
-                <RowDefinition Height="65"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBox Name="NameSearchBox" HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Naziv artikla" VerticalAlignment="Top" Width="400" FontSize="24"  GotFocus="NameSearchBoxGotFocus" LostFocus="NameSearchBoxLostFocus" Foreground="#616161"/>
-            <TextBox Name="BarcodeSearchBox" HorizontalAlignment="Left" Height="40" Margin="458,10,0,0" TextWrapping="Wrap" Text="Barcode" VerticalAlignment="Top" Width="400" FontSize="24"  GotFocus="BarcodeSearchBoxGotFocus" LostFocus="BarcodeSearchBoxLostFocus" Foreground="#616161"/>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="0" Background="WhiteSmoke">
+                <TextBlock Grid.Column="0"  HorizontalAlignment="Center" Height="50" Margin="0,10,0,0" TextWrapping="Wrap" Text="Ponuda" TextAlignment="Center" VerticalAlignment="Center" Width="620" FontSize="32" Foreground="WhiteSmoke" Background="LightSteelBlue"/>
+            </Grid>
+
+            <Grid x:Name="MenuGrid" Grid.Row="1" Background="WhiteSmoke">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="allBeaverage"  Grid.Column="0" Grid.Row="0"  Height="Auto" FontSize="20" Click="getAllBeaverages">Sve</Button>
-                <Button x:Name="hotDrinks"  Grid.Column="1" Grid.Row="0"  Height="Auto" FontSize="20" >Topli napici</Button>
-                <Button  Grid.Column="2" Grid.Row="0"  Height="Auto" FontSize="20">Voda</Button>
-                <Button  Grid.Column="3" Grid.Row="0"  Height="Auto" FontSize="20">Sokovi</Button>
-                <Button  Grid.Column="4" Grid.Row="0"  Height="Auto" FontSize="20">Pivo</Button>
-                <Button  Grid.Column="5" Grid.Row="0"  Height="Auto" FontSize="20">Vino</Button>
-                <Button  Grid.Column="6" Grid.Row="0"  Height="Auto" FontSize="20">Zestoka pica</Button>
+                <Button x:Name="allBeaverage"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke"  Click="allBeaverage_Click" Margin="5">Sve</Button>
+                <Button x:Name="hotDrinks"  Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5"  >Topli napici</Button>
+                <Button  Grid.Column="3" Grid.Row="1"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Voda</Button>
+                <Button  Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Sokovi</Button>
+                <Button  Grid.Column="2" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Pivo</Button>
+                <Button  Grid.Column="3" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Vino</Button>
+                <Button  Grid.Column="1" Grid.Row="3"  HorizontalAlignment="Center"   Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Zestoka pica</Button>
+                <Button  Grid.Column="2" Grid.Row="3"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Ostalo</Button>
+                <Button  Grid.Column="3" Grid.Row="3"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" >Jos</Button>
             </Grid>
-            <Grid x:Name="gridDrinks" Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                    <ColumnDefinition Width="126"/>
-                   
-                </Grid.ColumnDefinitions>
-                <Button x:Name="button1"  Grid.Column="0" Grid.Row="0"  Height="Auto" FontSize="20" Click="getAllBeaverages" Visibility="Hidden" Background="WhiteSmoke"></Button>
-                <Button x:Name="button2"  Grid.Column="1" Grid.Row="0"  Height="Auto" FontSize="20" Visibility="Hidden" Background="WhiteSmoke" ></Button>
-                <Button  Grid.Column="2" Grid.Row="0"  Height="Auto" FontSize="20" Visibility="Hidden" Background="WhiteSmoke" ></Button>
-                <Button  Grid.Column="3" Grid.Row="0"  Height="Auto" FontSize="20" Visibility="Hidden" Background="WhiteSmoke"></Button>
-                <Button  Grid.Column="4" Grid.Row="0"  Height="Auto" FontSize="20" Visibility="Hidden" Background="WhiteSmoke"></Button>
-            </Grid>
+
         </Grid>
-        <Grid Background="LightBlue"  Height="738" Width="483" HorizontalAlignment="Right">
+        <Grid Background="LightSteelBlue" Height="720" Width="483" HorizontalAlignment="Right">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="130"/>
+                <RowDefinition Height="70"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Korisnik: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <TextBlock Grid.Column="1" Grid.Row="0"  Name="UsernameBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="ulogovaniKorisnik" VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <TextBlock Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Broj računa: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <TextBlock Grid.Column="1" Grid.Row="1"  Name="ReceiptNumBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="brRacuna " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Height="40" Margin="25,10,0,0" TextWrapping="Wrap" Text="Ukupno: " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <TextBlock Grid.Column="1" Grid.Row="3"  Name="SumBox" HorizontalAlignment="Right" Height="40" Margin="25,10,10,0" TextWrapping="Wrap" Text="ukupnoZaUplatu " VerticalAlignment="Top" Width="auto" FontSize="24" Foreground="#616161"/>
-            <Button Grid.Column="0" Grid.Row="4" Name="CancleButton" Content="Poništi" FontSize="35" HorizontalAlignment="Left" Height="60" Margin="10,10,10,10" VerticalAlignment="Top" Width="222" Foreground="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="4" Name="ConfirmButton" Content="Potvrdi" FontSize="35" HorizontalAlignment="Right" Height="60" Margin="10,10,10,10" VerticalAlignment="Top" Width="222" Foreground="WhiteSmoke"/>
-            <Rectangle Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="30,30,30,30" Fill="WhiteSmoke"/>
 
         </Grid>
 

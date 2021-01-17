@@ -22,59 +22,64 @@ namespace EspressoProject.UserControls
     /// </summary>
     public partial class MainUC : UserControl
     {
+        
+
         public MainUC()
         {
             InitializeComponent();
         }
+        /*
+                private void GotFocusHelper(TextBox name, string text)
+                {
 
-        private void GotFocusHelper(TextBox name, string text)
-        {
+                    if (name.Text == text)
+                    {
+                        name.Text = "";
+                        var bc = new BrushConverter();
+                        name.Foreground = (Brush)bc.ConvertFrom("#424242");
+                        name.FontWeight = FontWeights.Bold;
+                    }
 
-            if (name.Text == text)
-            {
-                name.Text = "";
-                var bc = new BrushConverter();
-                name.Foreground = (Brush)bc.ConvertFrom("#424242");
-                name.FontWeight = FontWeights.Bold;
-            }
+                }
 
-        }
+                private void LostFocusHelper(TextBox name, string text)
+                {
+                    if (name.Text == "")
+                    {
+                        name.Text = text;
+                        var bc = new BrushConverter();
+                        name.Foreground = (Brush)bc.ConvertFrom("#616161");
+                        name.FontWeight = FontWeights.Normal;
+                    }
+                }
 
-        private void LostFocusHelper(TextBox name, string text)
-        {
-            if (name.Text == "")
-            {
-                name.Text = text;
-                var bc = new BrushConverter();
-                name.Foreground = (Brush)bc.ConvertFrom("#616161");
-                name.FontWeight = FontWeights.Normal;
-            }
-        }
+                private void NameSearchBoxGotFocus(object sender, RoutedEventArgs e)
+                {
+                    GotFocusHelper(NameSearchBox, "Naziv artikla");
+                }
 
-        private void NameSearchBoxGotFocus(object sender, RoutedEventArgs e)
-        {
-            GotFocusHelper(NameSearchBox, "Naziv artikla");
-        }
-
-        private void NameSearchBoxLostFocus(object sender, RoutedEventArgs e)
-        {
-            LostFocusHelper(NameSearchBox, "Naziv artikla");
-        }
+                private void NameSearchBoxLostFocus(object sender, RoutedEventArgs e)
+                {
+                    LostFocusHelper(NameSearchBox, "Naziv artikla");
+                }
 
 
 
-        private void BarcodeSearchBoxGotFocus(object sender, RoutedEventArgs e)
-        {
-            GotFocusHelper(BarcodeSearchBox, "Barcode");
-        }
+                private void BarcodeSearchBoxGotFocus(object sender, RoutedEventArgs e)
+                {
+                    GotFocusHelper(BarcodeSearchBox, "Barcode");
+                }
 
-        private void BarcodeSearchBoxLostFocus(object sender, RoutedEventArgs e)
-        {
-            LostFocusHelper(BarcodeSearchBox, "Barcode");
-        }
+                private void BarcodeSearchBoxLostFocus(object sender, RoutedEventArgs e)
+                {
+                    LostFocusHelper(BarcodeSearchBox, "Barcode");
+                }*/
+                
+
 
         private void getAllBeaverages(object sender, RoutedEventArgs e)
-        {
+        {/*
+            
             ObservableCollection<Article> drinks = Article.Load();
             int k = 0;
             //napravi velicinu grida gridDrinks
@@ -82,10 +87,16 @@ namespace EspressoProject.UserControls
             foreach (Article a in drinks)
             {
 
+
                 button1.Visibility = Visibility.Visible;
                 button1.Content = a.Name;
                 k++;
-            }
+            }*/
+        }
+
+        private void allBeaverage_Click(object sender, RoutedEventArgs e)
+        {
+            MenuGrid.Children.Clear();
         }
     }
 }

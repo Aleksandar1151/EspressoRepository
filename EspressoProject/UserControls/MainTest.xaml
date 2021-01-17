@@ -1,0 +1,70 @@
+﻿<Page x:Class="EspressoProject.UserControls.OptionsUserControls.MainTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EspressoProject.UserControls.OptionsUserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="883" Background="WhiteSmoke">
+    <StackPanel Orientation="Horizontal">
+        <Grid Background="White" Height="720" Width="883" HorizontalAlignment="Left" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135"/>
+                    <ColumnDefinition Width="620"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="1" HorizontalAlignment="Center"  Height="50" Width="620" Margin="0,10,0,0" FontSize="32" Background="LightSteelBlue" HorizontalContentAlignment="Left" BorderBrush="WhiteSmoke" VerticalAlignment="Center" >Nazad</Button>
+            </Grid>
+
+           
+                <Grid x:Name="MenuGrid" Grid.Row="1" Background="WhiteSmoke">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="allBeaverage"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5"></Button>
+                    <Button x:Name="hotDrinks"  Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5"  ></Button>
+                    <Button  Grid.Column="3" Grid.Row="1"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="2" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="3" Grid.Row="2"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="1" Grid.Row="3"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="2" Grid.Row="3"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="3" Grid.Row="3"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="2" Grid.Row="4"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="3" Grid.Row="4"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="1" Grid.Row="5"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="2" Grid.Row="5"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="3" Grid.Row="5"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="1" Grid.Row="6"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="2" Grid.Row="6"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+                    <Button  Grid.Column="3" Grid.Row="6"  HorizontalAlignment="Center"  Height="200" Width="200" FontSize="30" Background="LightSteelBlue" BorderBrush="WhiteSmoke" Margin="5" ></Button>
+
+                </Grid>
+            
+        </Grid>
+        
+
+    </StackPanel>
+</Page>
