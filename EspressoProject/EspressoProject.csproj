@@ -126,17 +126,6 @@
     <Compile Include="UserControls\OptionsUserControls\OptionsUC.xaml.cs">
       <DependentUpon>OptionsUC.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="UserControls\ReceiptUC.xaml.cs">
-      <DependentUpon>ReceiptUC.xaml</DependentUpon>
-=======
-    <Compile Include="UserControls\OptionsUserControls\ReportsUC.xaml.cs">
-      <DependentUpon>ReportsUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\OptionsUserControls\ThemesUC.xaml.cs">
-      <DependentUpon>ThemesUC.xaml</DependentUpon>
->>>>>>> Develop
-    </Compile>
     <Compile Include="UserControls\StorageUC.xaml.cs">
       <DependentUpon>StorageUC.xaml</DependentUpon>
     </Compile>
@@ -171,15 +160,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
-    <Page Include="UserControls\ReceiptUC.xaml">
-=======
     <Page Include="UserControls\OptionsUserControls\ReportsUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\OptionsUserControls\ThemesUC.xaml">
->>>>>>> Develop
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

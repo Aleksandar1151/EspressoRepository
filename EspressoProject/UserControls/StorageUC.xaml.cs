@@ -25,16 +25,12 @@ namespace EspressoProject.UserControls
     /// </summary>
     public partial class StorageUC : UserControl
     {
-        public static ReceiptUC ReceiptPage = new ReceiptUC();
+        //public static ReceiptUC ReceiptPage = new ReceiptUC();
         public static ObservableCollection<Article> ArticleList { get; set; }
         public static ObservableCollection<Article> SoldArticleList { get; set; }
         public StorageUC()
         {
-<<<<<<< HEAD
-=======
-            try { InitializeDB(); }
-            catch (Exception ex) { }
->>>>>>> Develop
+           
             InitializeComponent();
             Database.InitializeDB();
             try
@@ -50,7 +46,7 @@ namespace EspressoProject.UserControls
         private void ReceiptButtonClick(object sender, RoutedEventArgs e)
         {
             StorageGrid.Children.Clear();
-            StorageGrid.Children.Add(ReceiptPage);
+           // StorageGrid.Children.Add(ReceiptPage);
         }
     }
 }
