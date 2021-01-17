@@ -7,21 +7,77 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
               d:DesignHeight="722" d:DesignWidth="1366">
+    <UserControl.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid Background="WhiteSmoke">
         <StackPanel Orientation="Horizontal">
-            <Border BorderThickness="4" CornerRadius="10"  BorderBrush="Gray" Height="650" Margin="10,0,0,0" >
-                <Grid Background="Gray" Height="650" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <StackPanel>
-                        <Button Height="150" Background="LightGray" BorderBrush="{x:Null}" Margin="12" >
-                            <materialDesign:PackIcon Kind="Settings" Width="100" Height="100" Foreground="Gray"/>
+            <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueDarkBrush }">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+                </Grid.Effect>
+                <StackPanel>
+                    <Grid Height="150" Background="WhiteSmoke" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Button x:Name="ButtonOpenMenu" Height="61" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryHueDarkBrush}" Click="ButtonOpenMenu_Click">
+                            <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                         </Button>
-                        <Button x:Name="UsersButton" Content="Nalozi" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LightGray" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Click="UsersButtonClick" Height="76"/>
-                        
-                    </StackPanel>
-                </Grid>
-            </Border>
+                        <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click">
+                            <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
+                        </Button>
 
-            <Grid x:Name="OptionsGrid" Height="722" Background="WhiteSmoke" Width="1116">
+                        <Image Height="80" VerticalAlignment="Bottom" />
+                    </Grid>
+                    <ListView x:Name="ListViewMenu" Foreground="{DynamicResource SecondaryHueMidBrush}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
+                        <ListViewItem x:Name="UsersItem" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10" />
+                                <TextBlock Text="Nalozi" FontSize="19" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem x:Name="ReportsItem" Height="60" >
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="File" Height="25" Width="25" Margin="10"/>
+                                <TextBlock Text="Izvještaji" FontSize="19" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem x:Name="ThemesItem" Height="60">
+                            <StackPanel  Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Palette" Height="25" Width="25" Margin="10"/>
+                                <TextBlock Text="Izgled" FontSize="19" VerticalAlignment="Center"  Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        
+                    </ListView>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="OptionsGrid" Height="722" Background="WhiteSmoke" Width="1295" HorizontalAlignment="Right">
                 
             </Grid>
         </StackPanel>

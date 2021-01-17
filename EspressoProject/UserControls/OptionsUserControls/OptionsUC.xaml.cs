@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using EspressoProject.UserControls.OptionsUserControls;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace EspressoProject.UserControls
@@ -7,24 +8,54 @@ namespace EspressoProject.UserControls
     /// Interaction logic for OptionsUC.xaml
     /// </summary>
     public partial class OptionsUC : UserControl
-    {
-        public static UsersUC UsersPage = new UsersUC();
+    {       
         
         public OptionsUC()
         {
             
             InitializeComponent();
-            OptionsGrid.Children.Add(UsersPage);
+            UserControl usc;
+            usc = new UsersUC();
+            OptionsGrid.Children.Add(usc);
         }
-
-        private void UsersButtonClick(object sender, RoutedEventArgs e)
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-
-            OptionsGrid.Children.Clear();
-            OptionsGrid.Children.Add(UsersPage);
-
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
         }
 
-       
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility = Visibility.Visible;
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserControl usc = null;
+            OptionsGrid.Children.Clear();
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "UsersItem":
+                    usc = new UsersUC();
+                    OptionsGrid.Children.Add(usc);
+                    break;
+                case "ReportsItem":
+
+                   
+                    usc = new ReportsUC();
+                     OptionsGrid.Children.Add(usc);
+                    break;
+
+                case "ThemesItem":
+                    usc = new ThemesUC();
+                    OptionsGrid.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
