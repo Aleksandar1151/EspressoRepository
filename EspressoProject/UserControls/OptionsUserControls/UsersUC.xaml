@@ -4,26 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EspressoProject.UserControls"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="WhiteSmoke"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
              mc:Ignorable="d" 
-             d:DesignHeight="722" d:DesignWidth="1116" Background="WhiteSmoke">
+             d:DesignHeight="722" d:DesignWidth="1295"  >
     <StackPanel Orientation="Horizontal">
-        <Grid Background="WhiteSmoke" Height="722" Width="350" HorizontalAlignment="Left">
-            <StackPanel >
-                <TextBox x:Name="UsernameTextBox" Text="Korisničko ime" FontSize="26"  Width="250" HorizontalAlignment="Left" Margin="40,50,0,0"  GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161" />
-                <TextBox x:Name="PasswordTextBox" Text="Lozinka" FontSize="26"  Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus" Foreground="#616161"  />
-                <ComboBox x:Name="PrivilegeComboBox" Text="Tip naloga" FontSize="26" Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" Foreground="#616161">
+        <Grid Background="WhiteSmoke" Height="722" Width="450" HorizontalAlignment="Left" >
+            <StackPanel HorizontalAlignment="Center" Margin="75,0,41,0" Width="334" >
+                <TextBox x:Name="UsernameTextBox" Text="Korisničko ime" FontSize="20"  Width="250" HorizontalAlignment="Left" Margin="40,100,0,0"  GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161" />
+                <TextBox x:Name="PasswordTextBox" Text="Lozinka" FontSize="20"  Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus" Foreground="#616161"  />
+                <ComboBox x:Name="PrivilegeComboBox" Text="Tip naloga" FontSize="20" Width="250" HorizontalAlignment="Left" Margin="40,35,0,0" Foreground="#616161">
                     <ComboBoxItem Content="Administrator"/>
                     <ComboBoxItem Content="Konobar"/>
                 </ComboBox>
-                <Button Content="Sačuvaj izmjene" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" />
+                <Button Content="SNIMI" FontSize="20" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,80,10,20" Click="SaveButtonClick" Style="{DynamicResource MaterialDesignRaisedDarkButton}" />
 
-                <Button Content="Kreiraj nalog" Background="SeaGreen" FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,00,10,20" Click="CreateButtonClick" />
-
-                <Button Content="Obriši nalog"  FontSize="30" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,20,10,20" Background="#FF86BFEC" Click="DeleteButtonClick"/>
+                <Button Content="NAPRAVI"  FontSize="20" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,00,10,20" Click="CreateButtonClick" Style="{DynamicResource MaterialDesignFlatMidBgButton}" />
+                <Button Content="OBRIŠI"  FontSize="20" Height="80" Width="250" HorizontalAlignment="Left" Margin="40,0,0,20" Click="DeleteButtonClick" Style="{DynamicResource MaterialDesignFlatButton}"/>
 
             </StackPanel>
         </Grid>
-        <Grid Height="722" Width="766" HorizontalAlignment="Left">
+        <Grid Height="722" Width="830" HorizontalAlignment="Left" Background="WhiteSmoke">
             <ListView x:Name="ListView" Margin="15,27,25,15" FontSize="20" Background="ForestGreen" Foreground="DarkGray" PreviewMouseLeftButtonUp="SelectListCell" >
                 <ListView.View>
                     <GridView>

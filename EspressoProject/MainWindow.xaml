@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:EspressoProject"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         mc:Ignorable="d"  Height="768px" Width="1366px" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None">
 
     <StackPanel>
+
         <Grid Background="WhiteSmoke" Height="46" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5 0">
-                <Button x:Name="StorageButton" Visibility="Hidden" Content="Skladište" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick" Margin="0,0,1180,0"/>
+                <Button x:Name="StorageButton" Visibility="Hidden" Content="SKLADIŠTE" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{StaticResource PrimaryHueDarkBrush}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="StorageButtonClick" Margin="0,0,1180,0"/>
 
                 <materialDesign:PopupBox Name="PopupBoxName" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" Foreground="#FFA2A2A2" Visibility="Hidden">
                     <StackPanel Width="150">
@@ -32,14 +38,19 @@
 
 
         </Grid>
-        <Grid x:Name="GridMain" Height="722" Background="WhiteSmoke">
-            <Button Content="PRIJAVA" Height="Auto" Margin="156,425,758,239" Click="LoginButtonClick" FontSize="25" />
-            <TextBox Name="NameBox" HorizontalAlignment="Left" Height="72" Margin="160,176,0,0" TextWrapping="Wrap" Text="Korisničko ime" VerticalAlignment="Top" Width="450" FontSize="30" GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161"/>
-            <TextBox Name="PasswordBox" HorizontalAlignment="Left" Height="72" Margin="159,276,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Width="453" FontSize="30" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus" Foreground="#616161" />
+        <Grid x:Name="GridMain" Height="722" Background="WhiteSmoke" >
+
+
+
             <Button Content="Ugao" Margin="1290,673,2,1" Height="Auto"/>
-            <ProgressBar Name="pbStatus" HorizontalAlignment="Left" Height="558" Margin="734,60,0,0" VerticalAlignment="Top" Width="563" RenderTransformOrigin="0.475,0.51" Orientation="Vertical" Foreground="#FF964315" Background="WhiteSmoke" BorderBrush="White" />
-            <Image Name="CoffeeImage" HorizontalAlignment="Left" Height="587" Margin="709,53,0,0" VerticalAlignment="Top" Width="586" RenderTransformOrigin="-0.031,0.56" Source="Resources/LoginCoffee.png"/>
-            <StatusBar Name="StatusBar" Background="WhiteSmoke" FontSize="25" Foreground="#616161" HorizontalAlignment="Left" Height="64" Margin="75,638,0,0" VerticalAlignment="Top" Width="1039"/>
+            <ProgressBar Name="pbStatus" HorizontalAlignment="Left" Height="200" Margin="920,30,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.475,0.51" Orientation="Vertical" Foreground="#FF964315" Background="WhiteSmoke" BorderBrush="White" />
+            <Image Name="CoffeeImage" HorizontalAlignment="Left"  Margin="0,0,0,0" VerticalAlignment="Top"  Source="Resources/IntroScreen3.png"/>
+            <Button Content="" Background="{x:Null}" Height="Auto" Margin="818,466,168,198" Click="LoginButtonClick" FontSize="25" BorderThickness="0">
+                
+            </Button>
+                <TextBox Name="NameBox" HorizontalAlignment="Left" Height="55" Margin="818,289,0,0" TextWrapping="Wrap" Text="Korisničko ime" VerticalAlignment="Top" Width="378" FontSize="30" GotFocus="NameBoxGotFocus" LostFocus="NameBoxLostFocus" Foreground="#616161"/>
+            <TextBox Name="PasswordBox" HorizontalAlignment="Left" Height="58" Margin="818,377,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Width="378" FontSize="30" GotFocus="PasswordBoxGotFocus" LostFocus="PasswordBoxLostFocus" Foreground="#616161" />
+            <StatusBar Name="StatusBar" Background="WhiteSmoke" FontSize="25" Foreground="#616161" HorizontalAlignment="Left" Height="34" Margin="190,-40,0,0" VerticalAlignment="Top" Width="1039"/>
 
 
         </Grid>
