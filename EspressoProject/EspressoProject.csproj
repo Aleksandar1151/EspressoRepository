@@ -114,6 +114,9 @@
     <Compile Include="Classes\Merchandise.cs" />
     <Compile Include="Classes\Receipt.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="UserControls\AddTestUC.xaml.cs">
+      <DependentUpon>AddTestUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\AddTestUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\LoginUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
