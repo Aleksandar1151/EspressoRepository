@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EspressoProject.Classes
 {
-    class Merchandise
+    public class Merchandise
     {
     }
 }
