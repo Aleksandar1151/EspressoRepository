@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="EspressoProject.UserControls.MenuUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EspressoProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="883">
+
+
+    <StackPanel Orientation="Horizontal">
+        <Grid Height="720" Width="883" HorizontalAlignment="Left" Background="Red">
+            <ListView x:Name="ListView" Margin="15,60,15,15" FontSize="20" Background="ForestGreen" Foreground="DarkGray" PreviewMouseLeftButtonUp="SelectListCell" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="Column1" DisplayMemberBinding="{Binding Id}" Header="Id" Width="100" />
+                        <GridViewColumn x:Name="Column2" DisplayMemberBinding="{Binding Product}" Header="Proizvod" Width="200"/>
+                        <GridViewColumn x:Name="Column3" DisplayMemberBinding="{Binding Price}" Header="Cijena(po jed. mjere)" Width="300"/>
+                        <GridViewColumn x:Name="Column4" DisplayMemberBinding="{Binding Quantity}" Header="Kolicina" Width="183"/>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </Grid>
+
+    </StackPanel>
+</UserControl>
