@@ -29,7 +29,7 @@ namespace EspressoProject.UserControls
 
 
             Database.InitializeDB();
-            try
+           /*try
             {
 
                 MerchandiseList = new ObservableCollection<Merchandise>(Merchandise.Load());
@@ -41,6 +41,7 @@ namespace EspressoProject.UserControls
 
             }
             catch (Exception ex) { MessageBox.Show("Greška kod povezivanja sa tabelom.\nRazlog: " + ex.Message); }
+           */
         }
 
         private void SelectListCell(object sender, MouseButtonEventArgs e)
